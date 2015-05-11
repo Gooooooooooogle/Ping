@@ -13,6 +13,7 @@
 %>  
 <html>
 <head>
+
 	<base href="<%=basePath%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="static/image/sys/thumb.png" />
@@ -59,39 +60,11 @@
             		<div class="clear"></div>
           		</div>
           		<div class="comment-section">
-            		<div class="grids_of_2">
-              			<h2>关于评论</h2>
-              			<c:forEach var="comment" items="${currentComments }">
-                			<div class="grid_text">
-                  				<h4 class="style1_list"><a href="#">${comment.username }</a></h4>
-                  				<h3 class="style">${comment.commentDate }</h3>
-                  				<p class="para top">${comment.content }</p>
-                  				<a href="" class="btn1">赞一个</a>
-                  				<div class="clear"></div>
-                			</div>
-              			</c:forEach>
-            		</div>
-            		<div class="artical-commentbox">
-              			<h2>你的评论</h2>
-              			<div class="table-form">
-                			<form action="comment/${currentImage.imageId }" method="post" name="post_comment">
-                  				<div>
-                    				<label>你的评论<span>*</span></label>
-                    				<input type="text" id="text" name="text">
-                    				<input type="submit" value="submit">
-                  				</div>
-                			</form>
-              			</div>
-              			<div class="clear"></div>
-            		</div>
+					<div class="ds-thread" data-thread-key="Ping" data-title="${currentImage.title }" data-url="${currentImage.location }"></div>
             	</div>
         	</div>
       	</div>
     </div>
 
-	<div class="footer">
-		<p>Design by <a href="#">PPteam</a></p>
-	</div>
-	
 </body>
 </html>

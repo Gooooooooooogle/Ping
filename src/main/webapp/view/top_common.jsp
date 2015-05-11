@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: tianym
-  Date: 2015/5/10
-  Time: 21:44
+  Date: 2015/5/11
+  Time: 21:09
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" %>
@@ -51,7 +51,7 @@
     	            $("gender").innerText = userinfo.gender;
     	        } 
     		};
-    		xmlHttp.open("post", "search/asy?value=" + value, true);
+    		xmlHttp.open("post", "search/asy/value=" + value, true);
     		xmlHttp.setRequestHeader("Content-Type" , "application/x-www-form-urlencoded");
     		xmlHttp.send(null);
     	} 
@@ -113,7 +113,7 @@
 			</div>       	  
 			<div class="top-searchbar">
 				<form>
-					<input type="text" /><input type="submit" value="" />
+					<input type="text" onchange="checkSearch(this.value)"/><input type="submit" value=""/>
 				</form>
 			</div>
 			<div class="userinfo">

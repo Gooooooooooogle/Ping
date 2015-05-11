@@ -121,6 +121,10 @@ public class ImageServiceImpl implements ImageService {
 		accountService.updateAccount(account);
 	}
 
+	public void checkSearch() {
+
+	}
+
 	@Resource
 	public void setAccountService(AccountService accountService) {
 		this.accountService = accountService;
