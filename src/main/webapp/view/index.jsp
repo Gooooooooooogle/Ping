@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: tianym
+  User: ex
   Date: 2015/5/5
   Time: 7:20
   To change this template use File | Settings | File Templates.
@@ -14,7 +14,7 @@
 <html>
 <head>
 	<base href="<%=basePath%>">  
-	<title>PaiPai</title>
+	<title>Ping</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="static/image/sys/thumb.png"/>
   	<link rel="stylesheet" href="static/css/flow.css"/>

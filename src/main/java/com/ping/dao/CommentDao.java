@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 基于评论的DAO类
- * @author ppteam
+ * @author ex
  */
 @Repository
 public class CommentDao extends BaseDao<Comment> {

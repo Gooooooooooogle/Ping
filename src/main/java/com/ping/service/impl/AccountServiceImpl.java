@@ -43,7 +43,6 @@ public class AccountServiceImpl implements AccountService {
 	
 	private RoleService roleService;
 	
-	@Override
 	public Account findAccountByEmail(String accountId) {
 		List<Account> accounts = accountDao.find(FIND_ACCOUNT_BY_EMAIL, accountId);
 		if (accounts.size() <= 0) {
@@ -51,7 +50,7 @@ public class AccountServiceImpl implements AccountService {
 		}
 		return accounts.get(0);
 	}
-	@Override
+
 	public Account findAccountByUsername(String accountId) {
 		List<Account> accounts = accountDao.find(FIND_ACCOUNT_BY_USERNAME, accountId);
 		if (accounts.size() <= 0) {
@@ -59,11 +58,11 @@ public class AccountServiceImpl implements AccountService {
 		}
 		return accounts.get(0);
 	}
-	@Override
+
 	public Account findAccountByAccountId(String accountId) {
 		return accountDao.get(accountId);
 	}
-	@Override
+
 	public Set<String> findRolesByUsername(String username) {
 		Account account = findAccountByUsername(username);
         if (account == null) {
@@ -73,7 +72,6 @@ public class AccountServiceImpl implements AccountService {
         return roleService.findRolesByRoleIds(account.getRoleIds());
 	}
 	
-	@Override
 	public Set<String> findPermissionsByUsername(String username) {
 		Account account = findAccountByUsername(username);
 		if (account == null) {
@@ -82,17 +80,14 @@ public class AccountServiceImpl implements AccountService {
 		return roleService.findPermissionsByRoleIds(account.getRoleIds());
 	}
 	
-	@Override
 	public void updateAccount(Account account) {
 		accountDao.update(account);
 	}
 	
-	@Override
 	public void deleteAccount(String accountId) {
 		accountDao.delete(findAccountByAccountId(accountId));
 	}
 	
-	@Override
 	public List<Account> findAll() {
 		return accountDao.loadAll();
 	}
@@ -102,7 +97,6 @@ public class AccountServiceImpl implements AccountService {
 	 * @param account
 	 * @return
 	 */
-	@Override
 	public Account createAccount(Account account) {
 		try {
 			account.setRegisterDate(new Timestamp(System.currentTimeMillis()));
@@ -132,21 +126,18 @@ public class AccountServiceImpl implements AccountService {
 		return account;
 	}
 	
-	@Override
 	public void changePassword(String accountId, String newPassword) {
 		Account account = findAccountByAccountId(accountId);
         account.setPassword(newPassword);
         accountDao.update(account);
 	}
 	
-	@Override
 	public void lockAccount(String username) {
 		Account account = this.findAccountByUsername(username);
         account.setLock(true);
         accountDao.update(account);
 	}
 	
-	@Override
 	public void unockAccount(String username) {
 		Account account = this.findAccountByUsername(username);
 	    account.setLock(false);
@@ -158,7 +149,6 @@ public class AccountServiceImpl implements AccountService {
      * @param account
      * @param accountId
      */
-	@Override
 	public void subscribeSuccess(Account account, int accountId) {
 		account.getSubscribeIds().concat("," + accountId);
         accountDao.update(account);
@@ -175,7 +165,6 @@ public class AccountServiceImpl implements AccountService {
      * @param account 当前用户
      * @param accountId 指定用户Id
      */
-	@Override
 	public void unsubscribeSuccess(Account account, int accountId) {
 		account.getSubscribeIds().replace("," + accountId, "");
         accountDao.update(account);
@@ -191,7 +180,6 @@ public class AccountServiceImpl implements AccountService {
      * 用户邮箱验证成功，将用户解锁
      * @param account
      */
-	@Override
 	public void checkSuccess(Account account) {
 		accountDao.update(account.setLock(false));
 	}
@@ -211,7 +199,6 @@ public class AccountServiceImpl implements AccountService {
      * @param account 当前用户
      * @param imageId 指定图片Id
      */
-	@Override
 	public void collectSuccess(Account account, long imageId) {
 		account.getCollectImageIds().concat("," + imageId);
         accountDao.update(account);
@@ -226,7 +213,6 @@ public class AccountServiceImpl implements AccountService {
      * @param account
      * @param imageId
      */
-	@Override
 	public void unCollectSuccess(Account account, long imageId) {
 		account.getCollectImageIds().replace("," + imageId, "");
         accountDao.update(account);

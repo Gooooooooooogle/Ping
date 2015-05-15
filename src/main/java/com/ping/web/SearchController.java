@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class SearchController {
 
-    private Image
+    //private Image
 
     @RequestMapping(name = "search/asy/{value}", method = RequestMethod.POST)
     public String checkSearch(@PathVariable("value") String keyword) {
-
+        return "";
     }
 
 }

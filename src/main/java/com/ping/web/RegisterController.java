@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 实现注册功能的控制器类
- * @author tianym
+ * @author ex
  */
 @Controller
 public class RegisterController {

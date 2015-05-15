@@ -16,7 +16,7 @@ import org.springframework.util.Assert;
 
 /**
  * DAO层的基类，封装了常用的DAO操作方法
- * @author ppteam
+ * @author ex
  */
 public class BaseDao<E> {
 

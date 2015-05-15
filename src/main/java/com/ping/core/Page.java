@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 分页对象，包含当前页数据及分页信息
- * @author ppteam
+ * @author ex
  */
 public class Page<E> implements Serializable {
     private static final long serialVersionUID = 2667671026602298301L;

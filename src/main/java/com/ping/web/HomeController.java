@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 基于访问用户个人主页相关的控制器类
- * @author tianym
+ * @author ex
  */
 @Controller
 public class HomeController {

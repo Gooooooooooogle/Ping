@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 基于角色的DAO类
- * @author tianym
+ * @author ex
  */
 @Repository
 public class RoleDao extends BaseDao<Role> {

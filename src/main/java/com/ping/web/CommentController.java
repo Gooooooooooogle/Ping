@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 基于评论的控制器类
- * @author tianym
+ * @author ex
  */
 @Controller
 public class CommentController {

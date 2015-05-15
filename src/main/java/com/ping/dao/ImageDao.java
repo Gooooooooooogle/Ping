@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 基于图片的DAO类
- * @author tianym
+ * @author ex
  */
 @Repository
 public class ImageDao extends BaseDao<Image> {

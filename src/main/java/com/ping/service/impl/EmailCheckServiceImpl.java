@@ -12,7 +12,6 @@ public class EmailCheckServiceImpl implements EmailCheckService {
 	@Autowired
 	private EmailCheckDao emailCheckDao;
 
-	@Override
 	public EmailCheck findCheckCode(String checkCode) {
 		return emailCheckDao.findCheckCode(checkCode);
 	}

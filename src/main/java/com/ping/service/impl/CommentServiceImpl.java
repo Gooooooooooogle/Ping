@@ -25,7 +25,6 @@ public class CommentServiceImpl implements CommentService {
 	 * @param image
 	 * @param text
 	 */
-	@Override
 	public void commentSuccess(Image image, String text, String username) {
 		Comment comment = new Comment();
 		comment.setCommentDate(DateUtils.getNowByTimestamp());
@@ -39,7 +38,6 @@ public class CommentServiceImpl implements CommentService {
 	}
 	
 	@Transactional
-	@Override
 	public Page<Comment> pageQuery(int pageNo, int pageSize, String imageId) {
 		return commentDao.pageQuery(pageNo, pageSize, imageId);
 	}

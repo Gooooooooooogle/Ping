@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 访问首页的控制器类
- * @author tianym
+ * @author ex
  */
 @Controller
 public class IndexController {
 	
 	private ImageService imageService;
 	
-	@RequestMapping("/")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String toIndex() {
 		return "redirect:/index_1";
 	} 

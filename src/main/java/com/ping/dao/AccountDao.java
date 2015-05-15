@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 基于用户账户的DAO类
- * @author ppteam
+ * @author ex
  */
 @Repository
 public class AccountDao extends BaseDao<Account> {

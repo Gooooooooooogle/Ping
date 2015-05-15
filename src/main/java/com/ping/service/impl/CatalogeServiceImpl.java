@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 图片分类服务器
- * @author tianym
+ * @author ex
  */
 @Service("catalogeService")
 public class CatalogeServiceImpl implements CatalogeService {
@@ -21,7 +21,6 @@ public class CatalogeServiceImpl implements CatalogeService {
 	 * 返回所有已创建的分类名
 	 * @return
 	 */
-	@Override
 	public List<String> findAll() {
 		return catalogeDao.findAllForCatalogeName();
 	}

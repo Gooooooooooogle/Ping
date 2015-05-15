@@ -96,7 +96,7 @@ public class ImageController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
-	public String upload(@RequestParam("imageFile") MultipartFile imageFile, Image image,
+	public String upload(@RequestParam("imageFile") final MultipartFile imageFile, Image image,
 						 HttpServletRequest request) {
 		if (imageFile.isEmpty()) {
 			return "请选择上传的图片！";
@@ -106,7 +106,6 @@ public class ImageController {
 		String location = Constant.UPLOAD_IMAGE_LOCATION + "/" + imageFile.getOriginalFilename();
 
 		jmsTemplate.send("pp.uploadImage.queue", new MessageCreator() {
-			@Override
 			public Message createMessage(Session session) throws JMSException {
 				return session.createObjectMessage((Serializable) imageFile);
 			}

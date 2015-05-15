@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 基于登录/注销的控制器类
- * @author tianym
+ * @author ex
  * @version 0.2
  */
 @Controller

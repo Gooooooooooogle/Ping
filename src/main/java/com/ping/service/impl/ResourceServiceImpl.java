@@ -18,17 +18,14 @@ public class ResourceServiceImpl implements ResourceService {
 	@Autowired
 	private ResourceDao resourceDao;
 	
-	@Override
 	public Resource findResourceByResourceId(String resourceId) {
 		return resourceDao.get(resourceId);
 	}
 	
-	@Override
 	public List<Resource> findAll() {
 		return resourceDao.loadAll();
 	}
 	
-	@Override
 	public Set<String> findPermissionsByResourceIds(Set<String> resourceIds) {
         Set<String> permissions = new HashSet<String>();
         for (String resourceId : resourceIds) {
@@ -41,7 +38,6 @@ public class ResourceServiceImpl implements ResourceService {
         return permissions;
     }
 	
-	@Override
 	public List<Resource> findMenusByPermission(Set<String> permissions) {
 		List<Resource> resources = findAll();
 		List<Resource> menus = new ArrayList<Resource>();

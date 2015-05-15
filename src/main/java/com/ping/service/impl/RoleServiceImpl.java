@@ -21,32 +21,26 @@ public class RoleServiceImpl implements RoleService {
 	
 	private ResourceService resourceService;
 	
-	@Override
 	public void createRole(Role role) {
 		roleDao.save(role);
 	}
 	
-	@Override
 	public void updateRole(Role role) {
 		roleDao.update(role);
 	}
 	
-	@Override
 	public void deleteRole(Role role) {
 		roleDao.delete(role);
 	}
 	
-	@Override
 	public Role findRoleByRoleId(String roleId) {
 		return roleDao.get(roleId);
 	}
 	
-	@Override
 	public List<Role> findAll() {
 		return roleDao.loadAll();
 	}
 	
-	@Override
 	public Set<String> findRolesByRoleIds(String roleIdStr) {
 		Set<String> roles = new HashSet<String>();
 		String[] roleIds = roleIdStr.split(",");
@@ -62,7 +56,6 @@ public class RoleServiceImpl implements RoleService {
 		return roles;
 	}
 	
-	@Override
 	public Set<String> findPermissionsByRoleIds(String roleIdStr) {
 		Set<String> resourceIds = new HashSet<String>();
 		String[] roleIds = roleIdStr.split(",");

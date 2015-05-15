@@ -1,0 +1,44 @@
+.content{
+	background:url(../image/sys/border.png) repeat-x 0px 0px #FFF;
+	position: fixed;
+	width: 100%;
+	top: 0; 
+	z-index: 999;  
+	background-color:#F0EFEE;
+}
+body{
+	background:#F0EFEE;
+} 
+.main{
+	margin:3em auto 0;
+	width: 30%;
+}
+.user {
+	text-align: right;
+	vertical-align: middle;
+	margin-right: 5.2em;
+}
+.login{
+	padding:2em 0;
+}
+.inset {
+	position:relative;
+	background: #fff;
+	padding: 3em 2em; 
+	border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+}
+.inset:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border: 20px solid #FFF;
+	border-top: 0 solid rgba(0, 0, 0, 0)!important;
+	border-right: 13px solid rgba(0, 0, 0, 0)!important;
+	border-left: 13px solid rgba(0, 0, 0, 0);
+	left: 77.1%;
+	top: -5.3%;
+	position: absolute;
+}

@@ -2,7 +2,7 @@ package com.ping.core;
 
 /**
  * 系统常量类
- * @author tianym
+ * @author ex
  * @version 0.1
  */
 public class Constant {

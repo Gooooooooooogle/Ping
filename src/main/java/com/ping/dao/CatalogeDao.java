@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Õº∆¨∑÷¿‡∆˜DAO¿‡
- * @author tianym
+ * @author ex
  * @version 0.1
  */
 @Repository
