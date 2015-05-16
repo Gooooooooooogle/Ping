@@ -10,6 +10,7 @@ import com.ping.domain.Account;
 import com.ping.domain.Image;
 import com.ping.service.AccountService;
 import com.ping.service.CatalogeService;
+import com.ping.service.ImageService;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
@@ -47,21 +48,22 @@ public class AdditionalController {
 		accountService.unCollectSuccess(account, imageId);
 		return "ÒÑÈ¡Ïû¶©ÔÄ£¡";
 	}
-	
+
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String search(@RequestParam("searchContent") String searchContent, Model model) 
+	public String search(@RequestParam("searchContent") String searchContent, Model model)
 			throws IOException, SolrServerException {
 		Image image = null;
 		List<Image> images = new ArrayList<Image>();
 		SolrDocumentList solrDocumentList = SolrUtils.solr(searchContent);
+
 		for (SolrDocument solrDocument : solrDocumentList) {
 			image = imageService.findImageByImageId((String) solrDocument.get("image_id"));
 			images.add(image);
 		}
-		
+
 		model.addAttribute("cataloges", catalogeService.findAll());
 		model.addAttribute("searchOfImage", images);
-		
+
 		return "search";
 	}
 	

@@ -27,17 +27,21 @@ public class SolrUtils {
      */
     public static SolrDocumentList solr(String queryArgs) throws IOException, SolrServerException {
         SolrClient solr = new HttpSolrClient(SOLR_URL);
+
         SolrQuery parameters = new SolrQuery();
         parameters.set("q", queryArgs);
+        parameters.addSort("image_id", SolrQuery.ORDER.asc);
+        parameters.setHighlight(true);
+        parameters.addHighlightField("image_username");
+        parameters.setHighlightSimplePre("<font color='red'>");
+        parameters.setHighlightSimplePost("</font>");
+        parameters.setHighlightSnippets(1);// 结果分片数，默认为1
+        parameters.setHighlightFragsize(1000);// 每个分片的最大长度，默认为100
 
         QueryResponse response = solr.query(parameters);
         SolrDocumentList solrDocumentList = response.getResults();
 
         return solrDocumentList;
-    }
-
-    public static void main(String[] args) {
-        System.out.println();
     }
 
 }
