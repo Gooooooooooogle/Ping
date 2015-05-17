@@ -3,6 +3,7 @@ package com.ping.service.impl;
 import java.util.List;
 
 import com.ping.dao.CatalogeDao;
+import com.ping.domain.Cataloge;
 import com.ping.service.CatalogeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,13 +17,9 @@ public class CatalogeServiceImpl implements CatalogeService {
 	
 	@Autowired
 	private CatalogeDao catalogeDao;
-	
-	/**
-	 * 返回所有已创建的分类名
-	 * @return
-	 */
-	public List<String> findAll() {
-		return catalogeDao.findAllForCatalogeName();
+
+	public List<Cataloge> findAll() {
+		return catalogeDao.loadAll();
 	}
 	
 }

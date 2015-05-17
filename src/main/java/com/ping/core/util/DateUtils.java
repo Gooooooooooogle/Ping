@@ -41,6 +41,10 @@ public abstract class DateUtils {
 		return convertToTimeText(time.getTime());
 	}
 
+	public static Timestamp convertLongToTime(long currentTimeMillis) {
+		return new Timestamp(currentTimeMillis);
+	}
+
 	/**
 	 * 返回用Timestamp表示的当前时间
 	 * @return

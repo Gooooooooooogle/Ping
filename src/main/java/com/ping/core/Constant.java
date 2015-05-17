@@ -24,7 +24,10 @@ public class Constant {
 	public static final long CHECKCODE_AVAILABLE = 1000 * 60 * 60 * 24;
 	
 	public static final String ERROR_MSG = "error_msg";
-	
-	
+
+	/*
+	 * 图片默认的自动删除的毫秒数
+	 */
+	public static final long AUTO_DELETE_TIME = 1000 * 60 * 60 * 24;
 	
 }
