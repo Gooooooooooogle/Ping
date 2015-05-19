@@ -19,6 +19,7 @@ import com.ping.core.util.HttpUtils;
 import com.ping.domain.Account;
 import com.ping.domain.Comment;
 import com.ping.domain.Image;
+import com.ping.service.AccountService;
 import com.ping.service.CommentService;
 import com.ping.service.ImageService;
 import org.springframework.jms.core.JmsTemplate;
@@ -44,6 +45,23 @@ public class ImageController {
 	private ImageService imageService;
 	private CommentService commentService;
 	private JmsTemplate jmsTemplate;
+	private AccountService accountService;
+
+	@RequestMapping(value = "/{imageId}/collect", method = RequestMethod.GET)
+	@ResponseBody
+	public String collect(@PathVariable String imageId, HttpServletRequest request) {
+		Account account = (Account) request.getAttribute(Constant.CURRENT_ACCOUNT);
+		accountService.collectSuccess(account, imageId);
+		return "订阅成功！";
+	}
+
+	@RequestMapping(value = "/{imageId}/uncollect", method = RequestMethod.GET)
+	@ResponseBody
+	public String unCollect(@PathVariable String imageId, HttpServletRequest request) {
+		Account account = (Account) request.getAttribute(Constant.CURRENT_ACCOUNT);
+		accountService.unCollectSuccess(account, imageId);
+		return "已取消订阅！";
+	}
 
 	@RequestMapping("/{imageId}/detail")
 	public String detail(@PathVariable String imageId, Model model, HttpServletRequest request) {
@@ -129,5 +147,9 @@ public class ImageController {
 	public void setJmsTemplate(JmsTemplate jmsTemplate) {
 		this.jmsTemplate = jmsTemplate;
 	}
-	
+
+	@Resource
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
 }

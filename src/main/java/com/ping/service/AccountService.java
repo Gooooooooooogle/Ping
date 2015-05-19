@@ -32,16 +32,16 @@ public interface AccountService {
     public void unockAccount(String username);
     
     
-    public void subscribeSuccess(Account account, int accountId);
+    public void subscribeSuccess(Account account, String accountId);
     
-    public void unsubscribeSuccess(Account account, int accountId);
+    public void unsubscribeSuccess(Account account, String accountId);
     
     public void checkSuccess(Account account);
     
     public void loginSuccess(Account account);
     
-    public void collectSuccess(Account account, long imageId);
+    public void collectSuccess(Account account, String imageId);
     
-    public void unCollectSuccess(Account account, long imageId);
+    public void unCollectSuccess(Account account, String imageId);
 
 }

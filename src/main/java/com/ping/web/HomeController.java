@@ -56,10 +56,10 @@ public class HomeController {
 		model.addAttribute("imageForHot", imageForHot);
 		
 		Map<String, Integer> catalogeNameAndCount = new HashMap<String, Integer>();
-		for (String catalogeName : catalogeService.findAll()) {
+		/*for ( catalogeName : catalogeService.findAll()) {
 			catalogeNameAndCount.put(catalogeName, 
 					imageService.find(IMAGE_OF_CATALOGE, catalogeName, homeAccount.getUsername()));
-		}
+		}*/
 		model.addAttribute("catalogeNameAndCount", catalogeNameAndCount);	
 		
 		return "home";

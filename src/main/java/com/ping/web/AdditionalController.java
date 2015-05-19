@@ -32,22 +32,6 @@ public class AdditionalController {
 	private AccountService accountService;
 	private CatalogeService catalogeService;
 	private ImageService imageService;
-	
-	@RequestMapping(value = "/collect/{imageId}", method = RequestMethod.GET)
-	@ResponseBody
-	public String collect(@PathVariable long imageId, HttpServletRequest request) {
-		Account account = (Account) request.getAttribute(Constant.CURRENT_ACCOUNT);
-		accountService.collectSuccess(account, imageId);
-		return "订阅成功！";
-	}
-	
-	@RequestMapping(value = "/uncollect/{imageId}", method = RequestMethod.GET)
-	@ResponseBody
-	public String unCollect(@PathVariable long imageId, HttpServletRequest request) {
-		Account account = (Account) request.getAttribute(Constant.CURRENT_ACCOUNT);
-		accountService.unCollectSuccess(account, imageId);
-		return "已取消订阅！";
-	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(@RequestParam("searchContent") String searchContent, Model model)
